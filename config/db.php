@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=localhost;port=5432;dbname=ELS-2020',
+    'dsn' => 'pgsql:host=localhost;port=5432;dbname=helpdesk',
     'username' => 'postgres',
-    'password' => '123456',
+    'password' => 'password',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
