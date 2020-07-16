@@ -64,6 +64,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionTest(){
+        return $this->render('test');
+    }
+
+
     /**
      * Login action.
      *
@@ -77,7 +82,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['/thread']);
         }
 
         $model->password = '';
