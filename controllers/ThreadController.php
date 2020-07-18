@@ -8,6 +8,8 @@ use app\models\threadSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+
 
 /**
  * ThreadController implements the CRUD actions for thread model.
@@ -66,13 +68,17 @@ class ThreadController extends Controller
     {
         $model = new thread();
 
+        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->thread_id]);
         }
 
+
         return $this->render('create', [
             'model' => $model,
         ]);
+        
     }
 
     /**
@@ -94,6 +100,10 @@ class ThreadController extends Controller
             'model' => $model,
         ]);
     }
+
+
+
+    
 
     /**
      * Deletes an existing thread model.
