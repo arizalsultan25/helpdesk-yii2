@@ -42,131 +42,85 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
 
     <div class="wrap">
-        <?php
-        NavBar::begin([
-        'brandLabel' => 'SISMA Helpdesk',  //Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar navbar-expand-lg navbar-inverse',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end(); 
-        ?>
+       
 
 
-        <div class="container">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?= Alert::widget() ?>
             <?= $content ?>
-        </div>
+       
     </div>
 
-    <footer class="footer">
-        <div class="footer_top bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <p class="footer_text doanar"> <a class="first" href="#">+10 783 467 3789
-                                </a> <br>
-                                <a href="#">hostza@support.com</a></p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                service
-                            </h3>
-                            <ul>
-                                <li><a href="#">Hosting</a></li>
-                                <li><a href="#">Domain</a></li>
-                                <li><a href="#">Wordpress</a></li>
-                                <li><a href="#">Shared Hosting</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Navigation
-                            </h3>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Rooms</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">News</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Newsletter
-                            </h3>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Sign Up</button>
-                            </form>
-                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row text-white">
+				<div class="col-lg-4">
+					<div class="footer-widger">
+						<div class="about-widget">
+							<div class="aw-text">
+                            <?= Html::img('@web/mondy/img/logo.png',['width'=>'240','height'=>'60']) ?>
+								<p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate cong ue rutrum. Fusce lobortis a enim eget tempus. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-6">
+					<div class="footer-widger">
+						<h2>Company</h2>
+						<ul>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Clients</a></li>
+							<li><a href="#">Testimonials</a></li>
+							<li><a href="#">Carrers</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-6">
+					<div class="footer-widger">
+						<h2>For Buyers</h2>
+						<ul>
+							<li><a href="#">Buy with us</a></li>
+							<li><a href="#">Papers</a></li>
+							<li><a href="#">Clients</a></li>
+							<li><a href="#">Testimonials</a></li>
+							<li><a href="#">Homes</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-6">
+					<div class="footer-widger">
+						<h2>For Sellers</h2>
+						<ul>
+							<li><a href="#">Seel With us</a></li>
+							<li><a href="#">What do You Need</a></li>
+							<li><a href="#">Clients</a></li>
+							<li><a href="#">Testimonials</a></li>
+							<li><a href="#">Guideline</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-6">
+					<div class="footer-widger">
+						<h2>For Renters</h2>
+						<ul>
+							<li><a href="#">Rent with us</a></li>
+							<li><a href="#">Guidelines</a></li>
+							<li><a href="#">Apartments</a></li>
+							<li><a href="#">Flats</a></li>
+							<li><a href="#">Houses</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+		</div>
+	</footer>
 
     <?php $this->endBody() ?>
 </body>

@@ -2,9 +2,10 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\data\DataProvider;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\threadSearch */
+/* @var $searchModel app\models\ThreadSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Threads';
@@ -28,13 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'thread_id',
             'title',
-            'description:ntext',
-            'image',
+            'description',
+            //'image',
             'date',
-            //'status',
+            'status',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+        //    ['class' => 'yii\grid\ActionColumn'],
+        ]
     ]); ?>
 
 

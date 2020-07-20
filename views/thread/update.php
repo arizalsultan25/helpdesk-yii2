@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\thread */
+/* @var $model app\models\Thread */
 
 $this->title = 'Update Thread: ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Threads', 'url' => ['index']];
